@@ -941,7 +941,7 @@
                                                 "Fn::If": [
                                                     "InstallCloudWatchAgent",
                                                     {
-                                                        "Ref": "WatchmakerLaunchConfigLogGroup"
+                                                        "Ref": "LaunchConfigLogGroup"
                                                     },
                                                     {
                                                         "Ref": "AWS::NoValue"
@@ -959,7 +959,7 @@
                                                 "Fn::If": [
                                                     "InstallCloudWatchAgent",
                                                     {
-                                                        "Ref": "WatchmakerLaunchConfigLogGroup"
+                                                        "Ref": "LaunchConfigLogGroup"
                                                     },
                                                     {
                                                         "Ref": "AWS::NoValue"
@@ -977,7 +977,7 @@
                                                 "Fn::If": [
                                                     "InstallCloudWatchAgent",
                                                     {
-                                                        "Ref": "WatchmakerLaunchConfigLogGroup"
+                                                        "Ref": "LaunchConfigLogGroup"
                                                     },
                                                     {
                                                         "Ref": "AWS::NoValue"
@@ -995,7 +995,7 @@
                                                 "Fn::If": [
                                                     "InstallCloudWatchAgent",
                                                     {
-                                                        "Ref": "WatchmakerLaunchConfigLogGroup"
+                                                        "Ref": "LaunchConfigLogGroup"
                                                     },
                                                     {
                                                         "Ref": "AWS::NoValue"
@@ -1357,7 +1357,7 @@
             },
             "Type": "AWS::AutoScaling::LaunchConfiguration"
         },
-        "WatchmakerLaunchConfigLogGroup": {
+        "LaunchConfigLogGroup": {
             "Condition": "InstallCloudWatchAgent",
             "Properties": {
                 "LogGroupName": {
