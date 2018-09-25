@@ -156,7 +156,7 @@
                 }
             }
         },
-        "Version": "0.0.8"
+        "Version": "0.0.9"
     },
     "Outputs": {
         "Ec2SecurityGroupId": {
@@ -282,7 +282,12 @@
                 "t2.large",
                 "t2.xlarge",
                 "t2.2xlarge",
-                "t2.4xlarge",
+                "t3.micro",
+                "t3.small",
+                "t3.medium",
+                "t3.large",
+                "t3.xlarge",
+                "t3.2xlarge",
                 "c5.large",
                 "c5.xlarge",
                 "c5.2xlarge",
