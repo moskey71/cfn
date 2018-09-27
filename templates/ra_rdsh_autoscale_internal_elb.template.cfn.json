@@ -980,42 +980,6 @@
                                             "\",\n",
                                             "                        \"log_stream_name\": \"cloudformation_init_logs_{instance_id}\",\n",
                                             "                        \"timestamp_format\": \"%H:%M:%S %y %b %-d\"\n",
-                                            "                    },\n",
-                                            "                    {\n",
-                                            "                        \"file_path\": \"c:\\\\Watchmaker\\\\Logs\\\\salt_call.debug.log\",\n",
-                                            "                        \"log_group_name\": \"",
-                                            {
-                                                "Fn::If": [
-                                                    "InstallCloudWatchAgent",
-                                                    {
-                                                        "Ref": "LaunchConfigLogGroup"
-                                                    },
-                                                    {
-                                                        "Ref": "AWS::NoValue"
-                                                    }
-                                                ]
-                                            },
-                                            "\",\n",
-                                            "                        \"log_stream_name\": \"salt_call_debug_logs_{instance_id}\",\n",
-                                            "                        \"timestamp_format\": \"%H:%M:%S %y %b %-d\"\n",
-                                            "                    },\n",
-                                            "                    {\n",
-                                            "                        \"file_path\": \"c:\\\\Watchmaker\\\\Logs\\\\watchmaker.log\",\n",
-                                            "                        \"log_group_name\": \"",
-                                            {
-                                                "Fn::If": [
-                                                    "InstallCloudWatchAgent",
-                                                    {
-                                                        "Ref": "LaunchConfigLogGroup"
-                                                    },
-                                                    {
-                                                        "Ref": "AWS::NoValue"
-                                                    }
-                                                ]
-                                            },
-                                            "\",\n",
-                                            "                        \"log_stream_name\": \"watchmaker_logs_{instance_id}\",\n",
-                                            "                        \"timestamp_format\": \"%H:%M:%S %y %b %-d\"\n",
                                             "                    }\n",
                                             "                ]\n",
                                             "            }\n",
