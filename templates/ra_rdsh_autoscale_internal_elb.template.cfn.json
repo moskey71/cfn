@@ -674,7 +674,10 @@
                                 "s3:GetObject"
                             ],
                             "Effect": "Allow",
-                            "Resource": "arn:aws:s3:::amazon-ssm-*"
+                            "Resource": [
+                                "arn:aws:s3:::amazon-ssm-*",
+                                "arn:aws:s3:::amazoncloudwatch-agent/*"
+                            ]
                         },
                         {
                             "Action": [
@@ -845,6 +848,7 @@
                 "AWS::CloudFormation::Init": {
                     "configSets": {
                         "config": [
+                            "install-cloudwatch-agent",
                             "join-domain",
                             "setup",
                             "suspend-azrebalance",
@@ -902,6 +906,8 @@
                                                 "Ref": "CloudWatchAgentUrl"
                                             },
                                             "'; ",
+                                            "Write-Host '$CloudWatchAgentUri is' $CloudWatchAgentUri ; ",
+                                            "Write-Host '$CloudWatchAgentUri.host is' $CloudWatchAgentUri.host ; ",
                                             "$CloudWatchAgentScriptDir = 'c:\\cfn\\scripts\\AmazonCloudWatchAgent'; ",
                                             "$CloudWatchAgentZipFile = Join-Path $CloudWatchAgentScriptDir $CloudWatchAgentUri.Segments[($CloudWatchAgentUri.Segments.Length-1)]; ",
                                             "$Null = New-Item $CloudWatchAgentScriptDir -Type Directory -Force; ",
